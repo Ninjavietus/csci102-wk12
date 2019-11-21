@@ -16,4 +16,12 @@ def UpdateString(string_1, string_2, integer):
     new_list[integer] = string_2
     new_string = ''.join(new_list)
     print('OUTPUT', new_string)
+
+def FindWordCount(in_list, string_in):
+    for i in in_list:
+        count = 0
+        if i == string_in:
+            count += 1
+        return count
+    
         
