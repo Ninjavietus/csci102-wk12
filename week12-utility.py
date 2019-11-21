@@ -4,3 +4,9 @@
 
 def PrintOutput(string):
     print('OUTPUT', string)
+
+def LoadFile(filename):
+    with open(filename, 'r') as file:
+        global lines
+        lines = file.readlines()
+        
