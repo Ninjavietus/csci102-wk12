@@ -1,3 +1,4 @@
+#https://github.com/Ninjavietus/csci102-wk12.git
 #John Robert
 #CSCI 102 - Section E
 #Week 12 Part A
@@ -9,6 +10,7 @@ def LoadFile(filename):
     with open(filename, 'r') as file:
         global lines
         lines = file.readlines()
+        return lines
 
 def UpdateString(string_1, string_2, integer):
     global new_list
