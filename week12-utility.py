@@ -46,15 +46,19 @@ def Union(list_1, list_2):
 def Intersection(list_1, list_2):
     list_new = []
     for i in list_1:
-        if i == list_2[i]:
-            list_new.append(list_2[i])
+        for j in list_2:
+            if i == j:
+                list_new.append(j)
     return list_new
+
+#Check due to index? Two for loops YEP!
 
 def NotIn(list_1, list_2):
     list_new_new = []
     for i in list_2:
-        if i != list_1[i]:
-            list_new_new.append(list_1[i])
+        for j in list_1:
+            if j == i:
+                list_new_new.append(j)
     return list_new_new
     
         
