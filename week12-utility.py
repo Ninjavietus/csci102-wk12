@@ -1,7 +1,7 @@
 #https://github.com/Ninjavietus/csci102-wk12.git
 #John Robert
 #CSCI 102 - Section E
-#Week 12 Part A
+#Week 12 Part B
 
 def PrintOutput(string):
     print('OUTPUT', string)
@@ -20,28 +20,29 @@ def UpdateString(string_1, string_2, integer):
     print('OUTPUT', new_string)
 
 def FindWordCount(in_list, string_in):
+    count = 0
     for i in in_list:
-        count = 0
         if i == string_in:
             count += 1
-        return count
+    return count
 
 def ScoreFinder(player_names, player_scores, string_1):
     for i in player_names:
         if i == string_1:
-            player = i
-            score = int(player_scores[i])
+            for j in player_scores:
+                score = j
+                player = i
             print('OUTPUT', player, 'got a score of', score)
-        if string_1 is not in player_names:
-            print('OUTPUT player not found')
+    if string_1 not in player_names:
+        print('OUTPUT player not found')
 
 def Union(list_1, list_2):
-    for i in list_1:
-        if i != list_2[i]:
-            list_1.append(list_2[i])
-        if i == list_2[i]:
-            continue
-    return list_1
+    new_list = list_1 + list_2
+    for i in new_list:
+        j = new_list.count(i)
+        if j > 1:
+            new_list.remove(i)
+    return new_list
 
 def Intersection(list_1, list_2):
     list_new = []
@@ -51,14 +52,11 @@ def Intersection(list_1, list_2):
                 list_new.append(j)
     return list_new
 
-#Check due to index? Two for loops YEP!
 
-def NotIn(list_1, list_2):
-    list_new_new = []
+def NotIn(list_2, list_1):
     for i in list_2:
         for j in list_1:
             if j == i:
-                list_new_new.append(j)
-    return list_new_new
-    
+                list_2.remove(i)
+    return list_2
         
